@@ -1,12 +1,14 @@
+import datetime
 from django.db import models
 from django.urls import reverse
+
 
 class Person(models.Model):
     first_name = models.CharField(max_length=64, default="")
     middle_initial = models.CharField(max_length=1, default="")
     last_name = models.CharField(max_length=64, default="")
     ssn = models.IntegerField(default=0)
-    dob = models.CharField(max_length=20, default="")
+    dob = models.DateField()
     pob = models.CharField(max_length=200, default="")
 
     def __str__(self):
@@ -70,3 +72,15 @@ class Referee(models.Model):
 
     def __str__(self):
         return ("%s %s" % (self.referee.first_name, self.referee.last_name))
+
+# class Winner(models.Model):
+#     goals = models.IntegerField(default=0)
+    
+class Game(models.Model):
+    team1 = models.ForeignKey(Team, related_name="team_1", on_delete=models.CASCADE)
+    team2 = models.ForeignKey(Team, related_name="team_2", on_delete=models.CASCADE)
+    date = models.DateField(default=datetime.date.today)
+    # winning_team = models.ForeignKey(Team, related_name="winner", on_delete=models.CASCADE)
+    def __str__(self):
+        return("%s vs. %s" % (self.team1.name, self.team2.name))
+
