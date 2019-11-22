@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Teams</h1>
+		{% if name_list %}
+			{% for team in name_list %}
+				<div class="team">
+					<h2><a href="#">{{ team.name }}</a></h2>
+				</div>
+			{% endfor %}
+		{% else %}
+		    <p>No teams are available.</p>
+		{% endif %}
+{% endblock %}
+

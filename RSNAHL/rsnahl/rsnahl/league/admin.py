@@ -9,3 +9,4 @@ admin.site.register(Coach)
 admin.site.register(Manager)
 admin.site.register(Referee)
 admin.site.register(Game)
+
