@@ -3,11 +3,12 @@ from django.http import HttpResponse
 from django.template import loader
 
 from . models import Player
+from teams.models import Team
 # Create your views here.
 
 def players_list(request):
     name_list = Player.objects.all().order_by('id')
-    context = {'name_list': name_list,}
+    context = {'name_list': name_list}
     return render(request, 'players/players.html', context)
 
 def players_detail(request, slug):
