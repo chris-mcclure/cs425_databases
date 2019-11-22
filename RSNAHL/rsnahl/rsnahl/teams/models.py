@@ -5,6 +5,7 @@ from django.db import models
 class Team(models.Model):
 	city = models.CharField(max_length=100, default="")
 	name = models.CharField(max_length=100, default="")
+	slug = models.CharField(max_length=100, default="")
 	DIVISION_CHOICES = [
 		('good', 'good'), ('bad', 'bad'),
 	]
