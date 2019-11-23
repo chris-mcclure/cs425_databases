@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>RSNAHL</title>
+		<title>{% block title %} RSNAHL {% endblock %}</title>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -9,5 +9,6 @@
 			{% block content %}
 			{% endblock %}
 		</div>
+		<p>{% block info %}{% endblock %}</p>
 	</body>
 </html>

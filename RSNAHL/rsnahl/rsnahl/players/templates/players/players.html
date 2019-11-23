@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block title %} Players {% endblock %}
 {% block content %}
 	<h1><a href="{% url 'players_list' %}">Players</a></h1>
 		{% if name_list %}

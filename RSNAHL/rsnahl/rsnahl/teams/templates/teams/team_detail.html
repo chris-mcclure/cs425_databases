@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ team.name }} {% endblock %}
 {% block content %}
 <div class="team-detail">
 	<div class="team">
 		<h2>{{ team.name }}</h2>
+		{% for player in team.players.all %}
+			{{ player|linebreaks }}
+		{% endfor %}
+	</div>
 </div>
 {% endblock %}

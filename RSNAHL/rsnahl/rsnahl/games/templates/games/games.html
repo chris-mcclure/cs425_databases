@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
+{% block title %} Games {% endblock %}
 {% block content %}
 	<h1><a href="{% url 'game_list' %}">Games</a></h1>
 		{% if game_list %}
 			{% for game in game_list %}
 				<div class="game">
-					<h2><a href="{% url 'game_detail' slug=game.id %}">{{ game }} ({{ game.date }})</a></h2>
+					<h2><a href="{% url 'game_detail' slug=game.id %}">{{ game.teams.all|join:" vs. " }} ({{ game.date }})</a></h2>
 				</div>
 			{% endfor %}
 		{% else %}
