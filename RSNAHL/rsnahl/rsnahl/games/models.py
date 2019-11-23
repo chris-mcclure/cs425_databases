@@ -9,11 +9,7 @@ class Game(models.Model):
 	t2 = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="t2")
 	t2Score = models.IntegerField(default=0)
 	date = models.DateField()
+  	#FIGURE OUT HOW TO COMPUTE WINNER!!!!
 
 	def __str__(self):
 		return ("%s vs. %s" % (self.t1.name, self.t2.name))
-
-
-#finish winner!!!
-class Winner(models.Model):
-	winner = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="winner")

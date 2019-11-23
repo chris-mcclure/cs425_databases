@@ -28,4 +28,5 @@ urlpatterns = [
     path('about/', views.about),
     path('teams/', include('teams.urls')), #, name='teams'),
     path('players/', include('players.urls')),
+    path('games/', include('games.urls'))
 ]

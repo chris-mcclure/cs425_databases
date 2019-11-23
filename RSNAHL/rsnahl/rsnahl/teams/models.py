@@ -12,6 +12,10 @@ class Team(models.Model):
 	]
 	division = models.CharField(max_length=4, choices=DIVISION_CHOICES, default="")
 	players = models.ManyToManyField(Player)
-
+	# coach = models.ForeignKey(Coach, on_delete=models.CASCADE, default=None, related_name="team_coach")
+	# manager = models.ForeignKey(Manager, on_delete=models.CASCADE, default=None, related_name="team_manager")
 	def __str__(self):
 		return ("%s %s" % (self.city, self.name))
+
+
+		
