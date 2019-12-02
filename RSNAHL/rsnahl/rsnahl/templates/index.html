@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>RSNAHL</title>
-</head>
-<body>
-	<h1>Welcome to the Rock'em Sock'em National Arena Hockey League!</h1>
-	<a href="{% url 'home' %}">Home</a>
-	<a href="{% url 'about' %}">About</a>
-	<a href="{% url 'team_list' %}">Teams</a>
-	<a href="{% url 'players_list' %}">Players</a>
-	<a href="{% url 'game_list' %}">Games</a>
-
-
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+	          <h1 class="mt-5">Rock'em Sock'em National Arena Hockey League</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rerum eveniet sapiente repellat esse, doloremque quod recusandae deleniti nostrum assumenda vel beatae sed aut modi nesciunt porro quisquam voluptatem.</p>
+{% endblock %}

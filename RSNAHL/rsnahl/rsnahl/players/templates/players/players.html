@@ -2,7 +2,6 @@
 
 {% block title %} Players {% endblock %}
 {% block content %}
-	<h1><a href="{% url 'players_list' %}">Players</a></h1>
 		{% if name_list %}
 			{% for player in name_list %}
 				<div class = "player">

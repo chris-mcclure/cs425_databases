@@ -2,7 +2,6 @@
 
 {% block title %} Games {% endblock %}
 {% block content %}
-	<h1><a href="{% url 'game_list' %}">Games</a></h1>
 		{% if game_list %}
 			{% for game in game_list %}
 				<div class="game">

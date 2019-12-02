@@ -7,6 +7,7 @@
 		<h2>{{ game.teams.all|join:" vs. " }} </h2>
 		{% for team in game.teams.all %}
 			{{ team | linebreaks }}
+			{{ game.t2Score }}
 		{% endfor %}
 	</div>
 </div>

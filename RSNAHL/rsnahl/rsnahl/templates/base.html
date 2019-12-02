@@ -1,14 +1,23 @@
-<!DOCTYPE html>
-<html>
+
+<!-- <!DOCTYPE html>
+<html> -->
+{% extends 'main_template.html' %}
+{% block stuff %}
 	<head>
 		<title>{% block title %} RSNAHL {% endblock %}</title>
+	<a href="{% url 'home' %}">Home</a>
+	<a href="{% url 'about' %}">About</a>
+	<a href="{% url 'team_list' %}">Teams</a>
+	<a href="{% url 'players_list' %}">Players</a>
+	<a href="{% url 'game_list' %}">Games</a>
+
 	</head>
 	<body>
 		<div class="wrapper">
-			<h1><a href="{% url 'home' %}">Home</h1>
 			{% block content %}
 			{% endblock %}
 		</div>
 		<p>{% block info %}{% endblock %}</p>
 	</body>
-</html>
+{% endblock stuff %}
+<!-- </html> -->
