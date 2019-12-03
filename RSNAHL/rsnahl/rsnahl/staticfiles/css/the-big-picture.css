@@ -10,3 +10,31 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table.center{
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th, td{
+	padding: 15px;
+}
+
+table#t01 tr:nth-child(even){
+	background-color: #eee;
+}
+
+table#t01 tr:nth-child(odd){
+	background-color: #fff;
+}
+
+table#t01 th(even){
+	background-color: black;
+	color: white;
+}

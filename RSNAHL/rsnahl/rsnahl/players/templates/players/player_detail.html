@@ -3,9 +3,33 @@
 {% block title %}{{ player }} {% endblock %}
 {% block info %}
 <div class="player-detail">
-	<!-- <div class="player"> -->
-		<h3>{{ player }}</h3>
-		<h3>{{ player.team }}</h3>
-	<!-- </div> -->
+	<div class="player">
+		<table class="center" id="t01">
+			<tr>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Number</th>
+				<th>Weight</th>
+				<th>Height</th>
+				<th>Stick Orientation</th>
+				<th>Goals</th>
+				<th>Assists</th>
+				<th>Hits</th>
+				<th>Time on Ice</th>
+			</tr>
+			<tr>
+				<td>{{ player }}</td>
+				<td>{{ player.position }}</td>
+				<td>{{ player.number }}</td>
+				<td>{{ player.weight }}</td>
+				<td>{{ player.height }}</td>
+				<td>{{ player.stick_orientation }}</td>
+				<td>{{ player.goals }}</td>
+				<td>{{ player.assist }}</td>
+				<td>{{ player.hits }}</td>
+				<td>{{ player.toi }}</td>
+			</tr>
+		</table>
+	</div>
 </div>
 {% endblock %}

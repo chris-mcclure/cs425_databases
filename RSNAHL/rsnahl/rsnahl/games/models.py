@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from teams.models import Team
 import datetime
 
@@ -7,11 +8,10 @@ import datetime
 class Game(models.Model):
 	t1Score = models.IntegerField(default=0)
 	t2Score = models.IntegerField(default=0)
-	date = models.DateField()
+	date = models.DateField(default=datetime.date.today)
 	teams = models.ManyToManyField(Team)
 
   	#FIGURE OUT HOW TO COMPUTE WINNER!!!!
 
 	def __str__(self):
-
 		return ("%s vs. %s " % (self.teams.all()[0], self.teams.all()[1]))

@@ -4,11 +4,20 @@
 {% block content %}
 <div class="game-detail">
 	<div class="game">
-		<h2>{{ game.teams.all|join:" vs. " }} </h2>
-		{% for team in game.teams.all %}
-			{{ team | linebreaks }}
-			{{ game.t2Score }}
-		{% endfor %}
+		<table class="center" id="t01">
+			<tr>
+				<th>
+					{{ game.teams.all|join:" vs. " }}
+				</th>
+			</tr>
+			<tr>
+				<td>
+					{% for team in game.teams.all %}
+						{{ team }}
+						{{ game.t2Score }}
+					{% endfor %}
+				</td>
+		</table>
 	</div>
 </div>
 {% endblock %}

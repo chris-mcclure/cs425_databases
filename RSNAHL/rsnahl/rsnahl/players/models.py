@@ -1,12 +1,13 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 from persons.models import Person
 
 
 # Create your models here.
 class Player(models.Model):
     player = models.ForeignKey(Person, on_delete=models.CASCADE)
-    number = models.IntegerField(default=0)
-    weight = models.IntegerField(default=0)
+    number = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)])
+    weight = models.IntegerField(validators=[MinValueValidator(130), MaxValueValidator(260)])
     height = models.CharField(max_length=10, default="")
     POSITION_CHOICES = [
         ('Forward', (
@@ -29,9 +30,9 @@ class Player(models.Model):
         ('Right', 'Right'), ('Left', 'Left'),
     ]
     stick_orientation = models.CharField(max_length=5, choices=ORIENTATION_CHOICES, default='')
-    goals = models.IntegerField(default=0)
-    assist = models.IntegerField(default=0)
-    hits = models.IntegerField(default=0)
+    goals = models.IntegerField(validators=[MinValueValidator(0)])
+    assist = models.IntegerField(validators=[MinValueValidator(0)])
+    hits = models.IntegerField(validators=[MinValueValidator(0)])
     toi = models.CharField(max_length=15, default="")
 
     def __str__(self):

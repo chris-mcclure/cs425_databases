@@ -5,7 +5,20 @@
 		{% if game_list %}
 			{% for game in game_list %}
 				<div class="game">
-					<h2><a href="{% url 'game_detail' slug=game.id %}">{{ game.teams.all|join:" vs. " }} ({{ game.date }})</a></h2>
+					<h2><a href="{% url 'game_detail' slug=game.id %}">
+						<table id="t01">
+							<tr>
+								<th>
+									{{ game.date }}
+								</th>
+							</tr>
+							<tr>
+								<td>
+									{{ game.teams.all|join:" vs. " }}
+								</td>
+							</tr>
+						</table>
+					</a></h2>
 				</div>
 			{% endfor %}
 		{% else %}

@@ -5,7 +5,11 @@
 		{% if name_list %}
 			{% for team in name_list %}
 				<div class="team">
-					<h2><a href="{% url 'team_detail' slug=team.slug %}">{{ team.name }}</a></h2>
+					<h2><a href="{% url 'team_detail' slug=team.slug %}">
+						<table id="t01">
+							<tr><td>{{  team.name }}</td></tr>
+						</table>
+					</a></h2>
 				</div>
 			{% endfor %}
 		{% else %}
