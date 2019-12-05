@@ -5,9 +5,9 @@ from persons.models import Person
 
 # Create your models here.
 class Player(models.Model):
-    player = models.ForeignKey(Person, on_delete=models.CASCADE)
+    player = models.ForeignKey(Person, on_delete=models.CASCADE, unique=True)
     number = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(99)])
-    weight = models.IntegerField(validators=[MinValueValidator(130), MaxValueValidator(260)])
+    weight = models.IntegerField(validators=[MinValueValidator(130), MaxValueValidator(500)])
     height = models.CharField(max_length=10, default="")
     POSITION_CHOICES = [
         ('Forward', (
@@ -36,24 +36,7 @@ class Player(models.Model):
     toi = models.CharField(max_length=15, default="")
 
     def __str__(self):
-        return ("%s %s" % (self.player.first_name, self.player.last_name))
-
-
-
-
-# class Manager(models.Model):
-#     manager = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="manager")
-
-#     def __str__(self):
-#         return ("%s %s" % (self.manager.first_name, self.manager.last_name))
-
-# class Referee(models.Model):
-#     referee = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="referee")
-
-#     def __str__(self):
-#         return ("%s %s" % (self.referee.first_name, self.referee.last_name))
-
-
+        return ("%s %s: %s" % (self.player.first_name, self.player.last_name, self.player.id))
 
 
 

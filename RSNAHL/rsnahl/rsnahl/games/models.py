@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from teams.models import Team, TeamScore
+from teams.models import Team
 from django.core.validators import MaxValueValidator, MinValueValidator
 import datetime
 
@@ -21,7 +21,7 @@ class Game(models.Model):
 
 	# def __str__(self):
 	# 	return ("%s vs. %s " % (self.teams.all()[0], self.teams.all()[1]))
-	
+
 	def __str__(self):
 		return("%s %s vs. %s %s" % (self.homeTeam.city, self.homeTeam.name, 
 			self.visitingTeam.city, self.visitingTeam.name))

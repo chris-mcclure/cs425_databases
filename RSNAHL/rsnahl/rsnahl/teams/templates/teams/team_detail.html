@@ -5,19 +5,26 @@
 <div class="team-detail">
 	<div class="team">
 		<table class="center" id="t01">
-			<tr>
-				<th>
-					<h2>{{ team.name }} Players</h2>
-				</th>
-			</tr>
+			<tr><th><h1>{{team.name|linebreaks}}</h1></th></tr>
+		</table>
+	</br>
+		<table class="center" id="t01">
+			<tr><th><h2> Manager </h2></th></tr>
+			<tr><td> {{ team.manager|linebreaks }} </td></tr>
+		</table>
+	</br>
+		<table class="center" id="t01">
+			<tr><th><h2> Coach </h2></th></tr>
+			<tr><td> {{ team.coach|linebreaks }} </td></tr>
+		</table>
+	</br>
+		<table class="center" id="t01">
+			<tr><th><h2> Players </h2></th></tr>
 				{% for player in team.players.all %}
-			<tr>
-				<td>
-					{{ player|linebreaks }}
-				</td>
-			</tr>
+			<tr><td>{{ player|linebreaks }}</td></tr>
 			{% endfor %}
 		</table>
+	</br>
 	</div>
 </div>
 {% endblock %}

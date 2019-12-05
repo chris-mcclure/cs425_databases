@@ -5,7 +5,7 @@ from persons.models import Person
 # Create your models here.
 
 class Manager(models.Model):
-    manager = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="manager")
-
+    manager = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="manager", unique=True)
+    
     def __str__(self):
         return ("%s %s" % (self.manager.first_name, self.manager.last_name))
