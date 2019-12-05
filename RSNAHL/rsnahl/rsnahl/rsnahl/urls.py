@@ -28,5 +28,10 @@ urlpatterns = [
     path('about/', views.about, name ='about'),
     path('teams/', include('teams.urls')),
     path('players/', include('players.urls')),
-    path('games/', include('games.urls'))
+    path('games/', include('games.urls')),
+    path('coaches/', include('coaches.urls')),
+    path('managers/', include('managers.urls')),
+    path('referees/', include('referees.urls')),
+
+
 ]

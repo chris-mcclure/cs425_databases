@@ -7,15 +7,13 @@
 		<table class="center" id="t01">
 			<tr>
 				<th>
-					{{ game.teams.all|join:" vs. " }}
+					{{ game.homeTeam.city }} {{ game.homeTeam.name }} vs. {{ game.visitingTeam.city }} {{ game.visitingTeam.name }}
 				</th>
 			</tr>
 			<tr>
 				<td>
-					{% for team in game.teams.all %}
-						{{ team }}
-						{{ game.t2Score }}
-					{% endfor %}
+					{{ game.homeTeam.city }} {{ game.homeTeam.name }}: {{ game.homeScore }}, 
+					{{ game.visitingTeam.city }} {{ game.visitingTeam.name }}: {{ game.visitingScore }}
 				</td>
 		</table>
 	</div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 from players.models import Player
 
 # Create your models here.
@@ -17,5 +18,12 @@ class Team(models.Model):
 	def __str__(self):
 		return ("%s %s" % (self.city, self.name))
 
+
+class TeamScore(models.Model):
+	team = models.ForeignKey(Team, on_delete=models.CASCADE, null=True)
+	score = models.IntegerField(validators=[MinValueValidator(0)])
+
+	def __str__(self):
+		return("%s: %s" % (self.team, self.score))
 
 		

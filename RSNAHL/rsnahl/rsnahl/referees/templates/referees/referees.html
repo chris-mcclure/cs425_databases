@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Referees {% endblock %}
+{% block content %}
+		{% if referee_list %}
+			{% for referee in referee_list %}
+				<div class = "referee">
+					<h2><a href="{% url 'referees_detail' slug=referee.id %}">
+						<table id="t01">
+							<tr><td>{{referee}}</td></tr>
+						</table>
+					</a></h2>
+				</div>
+			{% endfor %}
+		{% else %}
+		    <p>No referees are available.</p>
+		{% endif %}
+{% endblock %}

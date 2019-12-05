@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Managers {% endblock %}
+{% block content %}
+		{% if manager_list %}
+			{% for manager in manager_list %}
+				<div class = "manager">
+					<h2><a href="{% url 'managers_detail' slug=manager.id %}">
+						<table id="t01">
+							<tr><td>{{manager}}</td></tr>
+						</table>
+					</a></h2>
+				</div>
+			{% endfor %}
+		{% else %}
+		    <p>No managers are available.</p>
+		{% endif %}
+{% endblock %}

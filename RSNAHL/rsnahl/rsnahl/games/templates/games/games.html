@@ -14,7 +14,7 @@
 							</tr>
 							<tr>
 								<td>
-									{{ game.teams.all|join:" vs. " }}
+									{{ game.homeTeam.city }} {{ game.homeTeam.name }} vs. {{ game.visitingTeam.city }} {{ game.visitingTeam.name }}
 								</td>
 							</tr>
 						</table>

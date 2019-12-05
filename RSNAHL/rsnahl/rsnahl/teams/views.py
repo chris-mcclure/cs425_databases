@@ -12,6 +12,5 @@ def teams_list(request):
 
 def teams_detail(request, slug):
 	team = Team.objects.get(slug=slug)
-	# team = Team.objects.all()
 	context = {'team': team}
 	return render(request, 'teams/team_detail.html',context)

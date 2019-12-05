@@ -10,7 +10,7 @@
 					<h2>{{ team.name }} Players</h2>
 				</th>
 			</tr>
-			{% for player in team.players.all %}
+				{% for player in team.players.all %}
 			<tr>
 				<td>
 					{{ player|linebreaks }}
@@ -21,3 +21,4 @@
 	</div>
 </div>
 {% endblock %}
+
